@@ -1,0 +1,8 @@
+{
+	"all": true,
+	"es-modules": true,
+	"include": ["src/**"],
+	"reporter": ["clover"],
+	"report-dir": "./.build/coverage-js",
+	"temp-dir": "./.build/c8"
+}

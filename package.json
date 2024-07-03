@@ -1,0 +1,76 @@
+{
+	"name": "@chillerlan/js-library-template",
+	"version": "1.0.0",
+	"description": "JavaScript template library",
+	"license": "MIT",
+	"homepage": "https://github.com/chillerlan/js-library-template",
+	"keywords": [],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chillerlan/js-library-template.git"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
+	"authors": [
+		{
+			"name": "smiley",
+			"email": "smiley@chillerlan.net",
+			"homepage": "https://github.com/codemasher"
+		}
+	],
+	"contributors": [
+		{
+			"name": "Contributors",
+			"homepage": "https://github.com/chillerlan/js-library-template/graphs/contributors"
+		}
+	],
+	"bugs": {
+		"url": "https://github.com/chillerlan/js-library-template/issues"
+	},
+	"funding": [
+		{
+			"type": "ko-fi",
+			"url": "https://ko-fi.com/codemasher"
+		}
+	],
+	"type": "module",
+	"main": "lib/main.cjs",
+	"browser": "./lib/browser.js",
+	"files": [
+		"dist/*",
+		"src/*",
+		"lib/*",
+		"LICENSE",
+		"README.md"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.24.6",
+		"@babel/preset-env": "^7.24.6",
+		"@babel/plugin-syntax-import-attributes": "^7.24.7",
+		"@istanbuljs/nyc-config-babel": "^3.0.0",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-json": "^6.1.0",
+		"@rollup/plugin-terser": "^0.4.4",
+		"c8": "^8.0.1",
+		"chai": "^5.1.1",
+		"core-js": "^3.37.1",
+		"eslint": "^9.4.0",
+		"jsdoc": "^4.0.3",
+		"mocha": "^10.4.0",
+		"node": "^22.2.0",
+		"nyc": "^15.1.0",
+		"rollup": "^4.18.0",
+		"util": "^0.12.5"
+	},
+	"scripts": {
+		"lint": "eslint ./src ./tests",
+		"build": "rollup -c rollup.config.dist.js",
+		"build-src": "rollup -c rollup.config.src.js",
+		"jsdoc": "jsdoc -c .jsdoc.json",
+		"test": "mocha",
+		"test-with-coverage": "c8 mocha",
+		"prepublishOnly": "npm run lint && npm run test && rollup -c rollup.config.prepublish.js"
+	}
+}

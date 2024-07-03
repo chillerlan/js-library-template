@@ -1,0 +1,4 @@
+{
+    "extends": "@istanbuljs/nyc-config-babel",
+    "temp-dir": ".build/.nyc_output"
+}
